@@ -105,7 +105,7 @@ namespace Frende.ApiExample
         {
             using (HttpClient client = new HttpClient())
             {
-                // Since this is an example, we get the discovery document directly:
+                // First we get the OpenID Connect discovery document:
                 var discovery = await client.GetDiscoveryDocumentAsync(issuer);
                 if (discovery.IsError) throw new Exception(discovery.Error);
 
