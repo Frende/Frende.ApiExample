@@ -39,6 +39,7 @@ namespace Frende.ApiExample
 
             using (var httpClient = new HttpClient())
             {
+                // The X-Frende-ClientId is required. This should be a unique value for the program.
                 httpClient.DefaultRequestHeaders.Add("X-Frende-ClientId", $"Frende.ApiExample.{clientId}");
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 httpClient.BaseAddress = new Uri(apiUri);
